@@ -30,7 +30,7 @@ class ArrayDequeMaxlen():
         # This implementation is done with python lists, so no need to have a front pointer
         # and the order of the list will consistently indicate the order of the queue
         # -> This is only added for interface compatibility reasons
-        return 1
+        return 0
         
     def add_first(self,e): # add element in front of the queue and delete at the end if max length reached
         if(self.__len__() == self.__max):
@@ -44,27 +44,27 @@ class ArrayDequeMaxlen():
         
     def delete_first(self): # delete element in front
         if self.is_empty():
-            raise Empty('Stack is empty')
+            raise Empty('Queue is empty')
         return self._data.pop(0)
         
     def delete_last(self): # delete element at the end
         if self.is_empty():
-            raise Empty('Stack is empty')
+            raise Empty('Queue is empty')
         return self._data.pop()
         
     def remove(self,e): # remove all elements of a given value from the queue
         if self.is_empty():
-            raise Empty('Stack is empty')
+            raise Empty('Queue is empty')
         self._data = [x for x in self._data if x != e]
         
     def first(self): # return first element
         if self.is_empty():
-            raise Empty('Stack is empty')
+            raise Empty('Queue is empty')
         return self._data[0]
         
     def last(self): # return last element
         if self.is_empty():
-            raise Empty('Stack is empty')
+            raise Empty('Queue is empty')
         return self._data[-1]
         
     def is_empty(self): # return whether queue is empty
