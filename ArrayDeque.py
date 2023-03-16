@@ -55,7 +55,8 @@ class ArrayDequeMaxlen():
     def remove(self,e): # remove all elements of a given value from the queue
         if self.is_empty():
             raise Empty('Queue is empty')
-        self._data.remove(e)
+        while e in self._data:
+            self._data.remove(e)
         
     def first(self): # return first element
         if self.is_empty():
